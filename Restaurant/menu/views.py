@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Dish
+from django.shortcuts import get_object_or_404, redirect, render
+from cart.models import CartItem
+from menu.models import Dish
 
 # Create your views here.
 
@@ -20,3 +21,4 @@ def menu_view(request):
         dishes = dishes.order_by('-created_at')
 
     return render(request, 'menu/menu.html', {'dishes': dishes})
+
