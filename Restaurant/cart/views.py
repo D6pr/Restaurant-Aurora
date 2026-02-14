@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import CartItem
-from menu.models import Dish
+from menu.models import Dish, DishOption
 from django.contrib.auth.decorators import login_required
 
 
@@ -10,18 +10,20 @@ def cart_view(request):
     total = sum(item.get_total_price() for item in items)
     return render(request, 'cart/cart.html', {'items': items, 'total': total})
 
-
 @login_required
 def add_to_cart(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
-    qty = int(request.POST.get("quantity", 1))
-    item, created = CartItem.objects.get_or_create(user=request.user, dish=dish)
-    if created:
-        item.quantity = qty
-    else:
-        item.quantity += qty
+    quantity = int(request.POST.get("quantity", 1))
+    option_ids = request.POST.getlist("options")
+    options = DishOption.objects.filter(id__in=option_ids)
+
+    item = CartItem.objects.create(user=request.user, dish=dish, quantity=quantity)
+    item.options.set(options)
     item.save()
-    return redirect('cart')
+
+    return redirect("cart")
+
+
 
 @login_required
 def remove_from_cart(request, item_id):

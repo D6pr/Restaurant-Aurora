@@ -10,11 +10,11 @@
 <body class="bg-light">
 <header class="bg-light shadow-sm">
     <div class="container d-flex justify-content-between align-items-center py-3">
-        <h2 class="fw-bold">Restaurant Aurora</h2>
+        <img src="{% static 'pages/restaurant.jpg' %}" class="logo" alt="Ресторан Аврора" width="auto" height="75">
         <nav class="d-flex gap-2">
             <a href="/" class="btn btn-outline-secondary">Головна</a>
             <a href="/menu" class="btn btn-outline-secondary">Меню</a>
-            <a href="/about" class="btn btn-outline-secondary">Про нас</a>
+            <a href="{% url 'about' %}" class="btn btn-outline-secondary">Про нас</a>
             <a href="/contacts" class="btn btn-outline-secondary">Контакти</a>
 
             {% if user.is_authenticated %}
@@ -84,9 +84,25 @@
 
                 <form method="post" action="{% url 'add_to_cart' dish.id %}">
                     {% csrf_token %}
-                    <input type="number" name="quantity" value="1" min="1">
-                    <button type="submit">Додати</button>
+                    <label for="quantity">Кількість:</label>
+                    <input type="number" name="quantity" value="1" min="1" class="form-control w-25 mb-3">
+
+                    {% if dish.options.all %}
+                    <h6>Додаткові опції:</h6>
+                    {% for option in dish.options.all %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" 
+                                name="options" value="{{ option.id }}" id="option{{ option.id }}">
+                            <label class="form-check-label" for="option{{ option.id }}">
+                                {{ option.name }} (+{{ option.price }} грн)
+                            </label>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-success mt-3">Додати</button>
                 </form>
+
 
               </div>
             </div>
