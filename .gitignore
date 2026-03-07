@@ -216,12 +216,6 @@ __pycache__/
 env/
 venv/
 
-# Django stuff:
-*.log
-db.sqlite3
-media/
-staticfiles/
-
 
 # IDE
 .vscode/
