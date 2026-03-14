@@ -146,5 +146,5 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 import os
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/menu/static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
