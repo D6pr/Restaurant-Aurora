@@ -1,0 +1,43 @@
+nav .btn {
+    min-width: 60px;
+    font-weight: 500;
+}
+
+nav .btn-outline-success {
+    border: 1px solid #28a745;
+}
+
+nav .btn-outline-primary {
+    border: 1px solid #007bff;
+}
+
+nav .btn-outline-secondary {
+    border: 1px solid #6c757d;
+}
+
+.receipt {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.receipt-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.receipt-header h1 {
+    color: #28a745;
+    font-weight: bold;
+}
+.receipt-details {
+    font-size: 1.1rem;
+}
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #6c757d;
+}

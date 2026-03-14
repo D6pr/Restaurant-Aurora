@@ -1,0 +1,16 @@
+nav .btn {
+    min-width: 60px;
+    font-weight: 500;
+}
+
+nav .btn-outline-success {
+    border: 1px solid #28a745;
+}
+
+nav .btn-outline-primary {
+    border: 1px solid #007bff;
+}
+
+nav .btn-outline-secondary {
+    border: 1px solid #6c757d;
+}   

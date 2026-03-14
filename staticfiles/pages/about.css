@@ -1,0 +1,56 @@
+blockquote {
+    font-size: 1.2rem;
+    color: #333;
+}
+.carousel-item {
+    padding: 40px;
+}
+.carousel-item p {
+    margin: 10px 0;
+}
+
+.logo {
+    width: 350px;
+    height: auto;
+}
+
+.carousel-item img {
+    height: 750px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+}
+
+.carousel-control-prev-icon::after {
+    content: '‹';
+    font-size: 80px;
+    color: black;
+}
+
+.carousel-control-next-icon::after {
+    content: '›';
+    font-size: 80px;
+    color: black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .btn-outline-success {
+    border: 1px solid #28a745;
+}
+
+nav .btn-outline-primary {
+    border: 1px solid #007bff;
+}
+
+nav .btn-outline-secondary {
+    border: 1px solid #6c757d;
+}

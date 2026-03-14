@@ -1,0 +1,24 @@
+body {
+    background: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.btn-register {
+    background-color: #28a745;
+    color: #fff;
+}
+.btn-register:hover {
+    background-color: #218838;
+}
+
+.btn-login {
+    background-color: #007bff;
+    color: #fff;
+}
+.btn-login:hover {
+    background-color: #0056b3;
+}
